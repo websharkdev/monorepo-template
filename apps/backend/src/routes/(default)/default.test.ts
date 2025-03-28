@@ -1,9 +1,11 @@
-import { createApp } from "@/lib";
 import { testClient } from "hono/testing";
 import { describe, expect, expectTypeOf, it } from "vitest";
+
+import { createApp } from "@/lib";
+
 import DRouter from "./default.index";
 
-describe("Default API Test", () => {
+describe("default API Test", () => {
   it("respons with object", async () => {
     const client = testClient(createApp().route("/", DRouter));
     const response = await client.index.$get();
@@ -12,7 +14,7 @@ describe("Default API Test", () => {
     expectTypeOf(json).toBeObject();
   });
 
-  it('respons with object message "Hello world!"', async () => {
+  it("respons with object message \"Hello world!\"", async () => {
     const client = testClient(createApp().route("/", DRouter));
     const response = await client.index.$get();
     const json = await response.json();

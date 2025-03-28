@@ -1,4 +1,5 @@
 import { serve } from "@hono/node-server";
+
 import { configureOpenAPI, createApp } from "./lib";
 import { DRouter } from "./routes";
 
@@ -14,6 +15,6 @@ routes.forEach((route) => {
 
 export default serve({
   fetch: app.fetch,
-  // eslint-disable-next-line ts/no-redeclare, node/no-process-env
-  port: parseInt(process.env.PORTNUMBER || "3003"),
+  // eslint-disable-next-line node/no-process-env
+  port: Number.parseInt(process.env.PORTNUMBER || "3002"),
 });

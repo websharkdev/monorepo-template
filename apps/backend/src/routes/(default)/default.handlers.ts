@@ -1,5 +1,6 @@
-import { AppRouteHandlrer } from "@/lib/types";
-import { HDefaultRoute } from "./default.routes";
+import type { AppRouteHandlrer } from "@/lib/types";
+
+import type { HDefaultRoute } from "./default.routes";
 
 export const HDefault: AppRouteHandlrer<HDefaultRoute> = async (c) => {
   return c.json({
