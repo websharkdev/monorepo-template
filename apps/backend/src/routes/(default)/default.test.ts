@@ -1,24 +1,24 @@
-import { testClient } from "hono/testing";
-import { describe, expect, expectTypeOf, it } from "vitest";
+import { testClient } from 'hono/testing';
+import { describe, expect, expectTypeOf, it } from 'vitest';
 
-import { createApp } from "@/lib";
+import { createApp } from '@/lib';
 
-import DRouter from "./default.index";
+import DRouter from './default.index';
 
-describe("default API Test", () => {
-  it("respons with object", async () => {
-    const client = testClient(createApp().route("/", DRouter));
-    const response = await client.index.$get();
-    const json = await response.json();
+describe('default API Test', () => {
+	it('respons with object', async () => {
+		const client = testClient(createApp().route('/', DRouter));
+		const response = await client.index.$get();
+		const json = await response.json();
 
-    expectTypeOf(json).toBeObject();
-  });
+		expectTypeOf(json).toBeObject();
+	});
 
-  it("respons with object message \"Hello world!\"", async () => {
-    const client = testClient(createApp().route("/", DRouter));
-    const response = await client.index.$get();
-    const json = await response.json();
+	it('respons with object message "Hello world!"', async () => {
+		const client = testClient(createApp().route('/', DRouter));
+		const response = await client.index.$get();
+		const json = await response.json();
 
-    expect(json.message).string("Hello world!");
-  });
+		expect(json.message).string('Hello world!');
+	});
 });

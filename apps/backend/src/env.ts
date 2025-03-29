@@ -1,20 +1,12 @@
-import { config } from "dotenv";
-import { expand } from "dotenv-expand";
-import { z } from "zod";
+import { config } from 'dotenv';
+import { expand } from 'dotenv-expand';
+import { z } from 'zod';
 
 expand(config());
 
 const ENVSchema = z.object({
-  NODE_ENV: z.string().default("development"),
-  LOG_LEVEL: z.enum([
-    "fatal",
-    "error",
-    "warn",
-    "info",
-    "debug",
-    "trace",
-    "silent",
-  ]),
+	NODE_ENV: z.string().default('development'),
+	LOG_LEVEL: z.enum(['fatal', 'error', 'warn', 'info', 'debug', 'trace', 'silent']),
 });
 
 export type env = z.infer<typeof ENVSchema>;
@@ -23,9 +15,9 @@ export type env = z.infer<typeof ENVSchema>;
 const { data: env, error } = ENVSchema.safeParse(process.env);
 
 if (error) {
-  console.error("❌ Invalid env:");
-  console.error(JSON.stringify(error.flatten().fieldErrors, null, 2));
-  process.exit(1);
+	console.error('❌ Invalid env:');
+	console.error(JSON.stringify(error.flatten().fieldErrors, null, 2));
+	process.exit(1);
 }
 
 export default env!;

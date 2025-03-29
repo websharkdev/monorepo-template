@@ -1,3 +1,3 @@
-import { createMessageObjectSchema } from "stoker/openapi/schemas";
+import { createMessageObjectSchema } from 'stoker/openapi/schemas';
 
-export const notFoundedSchema = createMessageObjectSchema("Not founded");
+export const notFoundedSchema = createMessageObjectSchema('Not founded');
