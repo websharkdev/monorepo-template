@@ -1,13 +1,18 @@
-'use client'
+'use server';
 
-import { Button } from "@repo/ui/components/button";
+import { database } from '@repo/database';
+import DCard from '../components/custom/card';
 
+export default async function Home() {
+  const all = await database.query.tasks.findMany();
 
-
-export default function Home() {
-  return (
-    <div>
-      <Button variant='default' onClick={() => console.log('Opps!')}>Hello world!</Button>
-    </div>
-  );
+  return <div className='grid grid-cols-4 gap-5 p-5 container mx-auto'>
+    {all.map((todo) => <DCard
+      key={todo.id}
+      title={todo.name}
+      description='Hey'
+      content={todo.id}
+      footer={'Footer'}
+    />)}
+  </div>;
 }
