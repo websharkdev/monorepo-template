@@ -5,7 +5,7 @@ import { z } from 'zod';
 expand(config());
 
 const ENVSchema = z.object({
-	DATABASE_URL: z.string().url(),
+	DATABASE_URL: z.string(),
 });
 
 export type env = z.infer<typeof ENVSchema>;
