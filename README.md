@@ -16,8 +16,11 @@ This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
+- `backend`: a [Hono.js](https://hono.dev/) app
 - `docs`: a [Next.js](https://nextjs.org/) app
 - `web`: another [Next.js](https://nextjs.org/) app
+- `@repo/database`: a NeonDB (PostgreSQL) config
+- `@repo/types`: a stub all used types at this repo
 - `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
 - `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
