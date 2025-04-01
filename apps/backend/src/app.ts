@@ -1,11 +1,11 @@
 import { serve } from '@hono/node-server';
 
 import { configureOpenAPI, createApp } from './lib';
-import { DRouter } from './routes';
+import { DRouter, TRouter } from './routes';
 
 const app = createApp();
 
-const routes = [DRouter];
+const routes = [DRouter, TRouter];
 
 configureOpenAPI(app);
 

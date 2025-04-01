@@ -10,6 +10,9 @@
   "dependencies": {
     "@hono/node-server": "^1.14.0",
     "@hono/zod-openapi": "^0.19.2",
+    "@repo/database": "workspace:*",
+    "@repo/schemas": "workspace:*",
+    "@repo/types": "workspace:*",
     "@scalar/hono-api-reference": "^0.7.3",
     "cross-env": "^7.0.3",
     "dotenv": "^16.4.7",
