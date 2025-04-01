@@ -1,0 +1,12 @@
+{
+  "name": "@repo/schemas",
+  "version": "0.0.0",
+  "private": true,
+  "types": "index.ts",
+  "files": [
+    "index.ts"
+  ],
+  "dependencies": {
+    "zod": "^3.24.2"
+  }
+}
